@@ -5,14 +5,14 @@ include_once("../models/bancoJogos.php");
 ?>
 
 <div class="container m-5  p-5">
-    <fornm action="" method="">
+    <fornm action="" method="GET">
         <div class="row mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Digite o codigo do Jogo</label>
             <div class="col-sm-3">
                 <input type="number" required class="form-control" id="inputEmail3">
             </div>
             <div class="col-sm-3">
-                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="submit" class="btn btn-primary">Primary</button>
             </div>
     </fornm>
 </div>
@@ -29,8 +29,11 @@ include_once("../models/bancoJogos.php");
     <tbody>
 
         <?php
-        $jogos = listaTudoJogos($conexao);
-        foreach ($jogos as $jogo) :
+        $codJogo = isset($_GET['CodJog']) ? $_GET['CodJog'] : 0;
+
+        if ($codJogo > 0) {
+            $jogo = listaTudoJogosCod($conexao, $codJogo);
+
         ?>
 
             <tr>
@@ -39,10 +42,10 @@ include_once("../models/bancoJogos.php");
                 <td><?= $jogo['consoleJog'] ?></td>
                 <td><?= $jogo['precoJog'] ?></td>
             </tr>
-
         <?php
-        endforeach;
+        }
         ?>
+
 
     </tbody>
 </table>
