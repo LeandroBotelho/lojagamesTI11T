@@ -26,16 +26,17 @@ function listaTudoJogosCod($conexao, $codJogo)
 }
 
 function alterarJogos($conexao,$codJog,$nomeJogo,$tamanhoJog,$precoJog,$requisitosJog,$consoleJog,$classificacaoJog,$avaliacaoJog)
+
 {
 
     $query = "update tbjogos set 
-    nomeJog = $nomeJogo, 
-    tamanhoJog = $tamanhoJog, 
-    precoJog = $precoJog, 
-    requisitosJog = $requisitosJog, 
-    consoleJog = $consoleJog, 
-    classificacaoJog = $classificacaoJog, 
-    avaliacaoJog = $avaliacaoJog where codJog = $codJog";
+    nomeJog = '{$nomeJogo}', 
+    tamanhoJog = '{$tamanhoJog}', 
+    precoJog = '{$precoJog}', 
+    requisitosJog = '{$requisitosJog}', 
+    consoleJog = '{$consoleJog}', 
+    classificacaoJog = '{$classificacaoJog}', 
+    avaliacaoJog = '{$avaliacaoJog}' where codJog = '{$codJog}' ";
     $resultados = mysqli_query($conexao, $query);
     return $resultados;
 }

@@ -5,16 +5,16 @@ include_once("../models/bancoJogos.php");
 ?>
 
 <div class="container m-5  p-5">
-    <fornm action="" method="GET">
+    <form action="listaTudoJogosCod.php" method="GET">
         <div class="row mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Digite o codigo do Jogo</label>
             <div class="col-sm-3">
-                <input type="number" required class="form-control" id="inputEmail3">
+                <input type="number" required name="CodJog" class="form-control" id="inputEmail3">
             </div>
             <div class="col-sm-3">
-                <button type="submit" class="btn btn-primary">Primary</button>
+                <button type="submit" class="btn btn-primary">Buscar</button>
             </div>
-    </fornm>
+    </form>
 </div>
 
 <table class="table">
@@ -41,6 +41,18 @@ include_once("../models/bancoJogos.php");
                 <td><?= $jogo['nomeJog'] ?></td>
                 <td><?= $jogo['consoleJog'] ?></td>
                 <td><?= $jogo['precoJog'] ?></td>
+                <td>
+                    <form action="../controllers/deletarJogos.php" method="Post">
+                        <input type="hidden" name="codJogdeletar" value="<?=$jogo['codJog']?>">
+                        <button type="submit" class="btn-small btn-danger">X</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="formAlterarJogos.php" method="Post">
+                        <input type="hidden" name="codJogalterar" value="<?=$jogo['codJog']?>">
+                        <button type="submit" class="btn-small btn-danger">Alterar </button>
+                    </form>
+                </td>
             </tr>
         <?php
         }
