@@ -24,6 +24,8 @@ include_once("../models/bancoJogos.php");
             <th scope="col">Jogo</th>
             <th scope="col">Console</th>
             <th scope="col">Preço</th>
+            <th scope="col">Deletar</th>
+            <th scope="col">Alterar</th>
         </tr>
     </thead>
     <tbody>
