@@ -1,10 +1,10 @@
 <?php
 
-function inserirUsuarios($conexao, $emailusu, $senhausu,$pin){
+function inserirUsuarios($conexao, $emailusu, $senhausu,$pinusu){
     $option = ['cost' => 8];
     $senhacrypto = password_hash($senhausu, PASSWORD_BCRYPT, $option); 
 
-    $query = "insert into tbusuarios(emailUsu,senhaUsu,pinUsu)values('{$emailusu}','{$senhacrypto}','{$pin}')";
+    $query = "insert into tbusuarios(emailUsu,senhaUsu,pinUsu)values('{$emailusu}','{$senhacrypto}','{$pinusu}')";
 
     $resultados = mysqli_query($conexao, $query);
     return $resultados;
@@ -25,11 +25,14 @@ function listaTudoUsuCod($conexao, $codUsuario){
     return $resul;
 }
 
-function alterarUsuario($conexao,$codUsu,$emailUsu,$senhaUsu,$pinUsu){
+function alterarUsuario($conexao,$codUsu,$emailUsu,$senhausu,$pinUsu){
+    $option = ['cost' => 8];
+    $senhacrypto = password_hash($senhausu, PASSWORD_BCRYPT, $option); 
+
     $query = "update tbusuarios set  
     emailUsu = '{$emailUsu}', 
     pinUsu = '{$pinUsu}',
-    senhaUsu = '{$senhaUsu}' where codUsu = '{$codUsu}' ";
+    senhaUsu = '{$senhacrypto}' where codUsu = '{$codUsu}' ";
     $resultados = mysqli_query($conexao, $query);
     return $resultados;
 }

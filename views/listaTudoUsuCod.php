@@ -22,6 +22,7 @@ include_once("../models/bancoUsuarios.php");
         <tr>
             <th scope="col">E-mail</th>
             <th scope="col">Senha</th> 
+            <th scope="col">Pin</th>
             <th scope="col">Deletar</th>
             <th scope="col">Alterar</th>
         </tr>
@@ -33,29 +34,28 @@ include_once("../models/bancoUsuarios.php");
 
         if ($codUsuarios > 0) {
             $usuarios = listaTudoUsuCod($conexao, $codUsuarios);
-
+       if($usuarios){
         ?>
 
             <tr>
                 <th scope="row"><?= $usuarios['codUsu'] ?></th>
                 <td><?= $usuarios['emailUsu'] ?></td>
                 <td><?= $usuarios['senhaUsu'] ?></td>
+                <td><?= $usuarios['pinUsu'] ?></td>
                 <td>
-                    <form action="../controllers/" method="Post">
-                        <input type="hidden" name="codUsudeletar" value="<?=$jogo['codJog']?>">
+                    <form action="../controllers/deletarUsuario.php" method="Post">
+                        <input type="hidden" name="codUsudeletar" value="<?=$usuarios['codUsu']?>">
                         <button type="submit" class="btn-small btn-danger">X</button>
                     </form>
                 </td>
                 <td>
-                    <form action="formAlterarJogos.php" method="Post">
-                        <input type="hidden" name="codUsualterar" value="<?=$jogo['codJog']?>">
+                    <form action="../views/formaAlterarUsuarios.php" method="Post">
+                        <input type="hidden" name="codUsualterar" value="<?=$usuarios['codUsu']?>">
                         <button type="submit" class="btn-small btn-danger">Alterar </button>
                     </form>
                 </td>
             </tr>
-        <?php
-        }
-        ?>
+    
 
 
     </tbody>
@@ -63,5 +63,9 @@ include_once("../models/bancoUsuarios.php");
 
 
 <?php
+
+
+}
+}
 include_once("footer.php");
 ?>
