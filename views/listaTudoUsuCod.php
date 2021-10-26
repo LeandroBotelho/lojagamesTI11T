@@ -20,9 +20,10 @@ include_once("../models/bancoUsuarios.php");
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">E-mail</th>
-            <th scope="col">Senha</th> 
-            <th scope="col">Pin</th>
+            <th scope="col">Código</th>
+            <th scope="col">E-mail</th> 
+            <th scope="col">Senha</th>
+            <th scope="col">PIN</th>
             <th scope="col">Deletar</th>
             <th scope="col">Alterar</th>
         </tr>

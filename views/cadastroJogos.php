@@ -1,7 +1,7 @@
 <?php
 include("../views/header.php");
 ?>
-    <form method="Post" action="../controllers/inserirJogos.php">
+    <form method="Post" action="../controllers/inserirJogos.php" style="border:1px solid black ; padding:20px;">
 <P>Jogo <input type="text" name="jogo"></P>
 <p>Tamanho do jogo <input type="text" name="tamanho"></p>
 <p>Preço<input type="text" name="preco"></p>

@@ -1,8 +1,7 @@
 <?php
 include_once("header.php");
 ?>
-<img src="img/Jogosonline.gif" width="100%">
-
+<p><img src="img/Jogosonline.gif" alt="Jogos Online" align="center" width="100%"></p>
 <?php
 include_once("footer.php");
 ?>
