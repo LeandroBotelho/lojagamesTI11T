@@ -41,7 +41,7 @@
                 Jogos
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="cadastroJogos.php">Cadastro</a></li>
+                <li><a class="dropdown-item" href="cadastroJogos.php">Cadastro de Jogos</a></li>
                 <li><a class="dropdown-item" href="../views/listaTudoJogos.php">Visualizar Tudo</a></li>
                 <li>
                   <hr class="dropdown-divider">
@@ -55,8 +55,8 @@
                 Cliente
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Cadastro</a></li>
-                <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                <li><a class="dropdown-item" href="cadastroClientes.php">Cadastro de Clientes</a></li>
+                <li><a class="dropdown-item" href="#">Visualizar todos</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
