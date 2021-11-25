@@ -1,0 +1,10 @@
+#tela{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formlogin{
+margin: 20%;
+padding: 4%;
+}

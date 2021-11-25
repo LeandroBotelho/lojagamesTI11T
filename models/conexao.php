@@ -3,7 +3,6 @@
 $url = 'localhost';
 $usuario = 'root';
 $senha = '';
-$nomeBanco = 'bdlojagamesti11t';
+$nomeBanco = 'bdlojagamestit';
 
 $conexao=mysqli_connect($url,$usuario,$senha,$nomeBanco);
-?>
